@@ -1,0 +1,19 @@
+{
+  "name": "chainforge-ai",
+  "version": "0.1.0",
+  "description": "AI-powered Blockchain Development IDE",
+  "private": true,
+  "workspaces": [
+    "packages/backend",
+    "packages/frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev -w @chainforge/backend\" \"npm run dev -w @chainforge/frontend\"",
+    "build": "npm run build -w @chainforge/backend && npm run build -w @chainforge/frontend",
+    "test": "npm run test -w @chainforge/backend && npm run test -w @chainforge/frontend",
+    "lint": "npm run lint -w @chainforge/backend && npm run lint -w @chainforge/frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
